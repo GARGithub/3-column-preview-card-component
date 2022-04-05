@@ -1,0 +1,142 @@
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  /* (paragraphs) */
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (background, headings, buttons) */
+  --very-light-gray: hsl(0, 0%, 95%);
+
+  --font-family-primary: 'Lexend Deca', sans-serif;
+  --font-family-secondary: 'Big Shoulders Display', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--transparent-white);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.cards-grid {
+  display: grid;
+  width: 90vw;
+}
+
+.card {
+  display: grid;
+  row-gap: 1rem;
+  color: var(--very-light-gray);
+  padding: 2.5rem;
+}
+
+.card:first-child {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card:last-child {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+#sedans {
+  background-color: var(--bright-orange);
+}
+
+#suvs {
+  background-color: var(--dark-cyan);
+}
+
+#luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.card .title {
+  font-size: 2rem;
+  font-family: var(--font-family-secondary);
+  text-transform: uppercase;
+}
+
+.card .description {
+  line-height: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.card button {
+  position: relative;
+  justify-self: start;
+  border: 0.2rem solid transparent;
+  background-color: var(--transparent-white);
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  transform-origin: top;
+}
+
+.card button:hover {
+  color: var(--transparent-white) !important;
+  background-color: transparent;
+  border-color: var(--transparent-white);
+}
+
+#sedans button {
+  color: var(--bright-orange);
+}
+
+#suvs button {
+  color: var(--dark-cyan);
+}
+
+#luxury button {
+  color: var(--very-dark-cyan);
+}
+
+@media (min-width: 38.4em) {
+  main {
+    height: 100vh;
+  }
+
+  .cards-grid {
+    max-width: 66.7em;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    row-gap: 2rem;
+  }
+
+  .card:first-child {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  .card:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .card button {
+    margin-top: 3rem;
+  }
+}
